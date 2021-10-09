@@ -49,7 +49,9 @@ export default class NotificationMessage {
       this.timer = null;
     }
 
-    NotificationMessage.displayedInstance = null;
+    if (NotificationMessage.displayedInstance === this) {
+      NotificationMessage.displayedInstance = null;
+    }
   }
 
   destroy() {
