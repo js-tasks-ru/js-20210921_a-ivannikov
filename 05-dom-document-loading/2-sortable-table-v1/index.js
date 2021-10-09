@@ -130,6 +130,10 @@ export default class SortableTable {
     this.headerCells[field]?.setAttribute('data-order', direction);
   }
 
+  resetOrders() {
+    Object.values(this.headerCells).forEach(cell => cell.dataset.order = '');
+  }
+
   sort(field, direction) {
     const header = this.headerConfig.find(item => item.id === field);
 
@@ -141,6 +145,7 @@ export default class SortableTable {
     this.subElements.body.innerHTML = this.renderBody();
 
     this.arrowElement.remove();
+    this.resetOrders();
     this.appendArrow(field, direction);
   }
 
