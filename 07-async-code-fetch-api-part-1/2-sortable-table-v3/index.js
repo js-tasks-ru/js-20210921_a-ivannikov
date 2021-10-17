@@ -227,8 +227,7 @@ export default class SortableTable {
   }
 
   async sortOnServer(id, order) {
-//    this.data = await this.loadData(id, order, 0, this.limit);
-    this.data = await this.loadData(id, order, 500, 530);
+    this.data = await this.loadData(id, order, 0, this.limit);
   }
 
   async sort(id, order) {
